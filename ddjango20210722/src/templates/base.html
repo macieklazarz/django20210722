@@ -2,9 +2,16 @@
 <html>
 
 <head>
-	<div style="border: 2px solid #000;">
-		<h1>This is header</h1>
-	</div>
+	<title>This is titme</title>
+
+	{% if request.user.is_authenticated %}
+		<p>Hello, {{request.user.username}} | <a href="{% url 'logout'%}">Logout</a></p>
+	{% else %}
+		<p><a href="{% url 'register' %}">Register</a> | <a href="#">Login</a></p>
+	{% endif %}
+	<hr>
+
+
 </head>
 <body>
 	
@@ -16,10 +23,8 @@
 </body>
 
 <footer>
-
-	<div style="border: 2px solid #000;">
-		<h3>This is footer</h3>
-	</div>
-</footer>
+	<hr>
+	<p>Coding with Mich Blog</p>
+	</div></footer>
 
 </html>
