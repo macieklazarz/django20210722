@@ -3,28 +3,25 @@
 
 <head>
 	<title>This is titme</title>
-
-	{% if request.user.is_authenticated %}
-		<p>Hello, {{request.user.username}} | <a href="{% url 'logout'%}">Logout</a></p>
-	{% else %}
-		<p><a href="{% url 'register' %}">Register</a> | <a href="#">Login</a></p>
-	{% endif %}
-	<hr>
-
-
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{% include 'snippets/header.html' %}
 </head>
 <body>
-	
-	{% block content %}
-	
-	{% endblock content %}
+	<!-- Body -->
+	<style type="text/css">
+		.main{
+			min-height: 100vh;
+			height: 100%;
+		}
+	</style>
+	<div class="main">
+		{% block content %}
+		
+		{% endblock content %}
+	</div>
+	<!-- End Body -->
 
-
+	{% include 'snippets/footer.html' %}
 </body>
-
-<footer>
-	<hr>
-	<p>Coding with Mich Blog</p>
-	</div></footer>
-
 </html>

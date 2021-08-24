@@ -2,11 +2,21 @@
 
 
 {% block content %}
-<h3> Registerted users</h3>
-	{% for account in accounts %}
-		<p>{{account}}</p>
-	{% endfor %}
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal">CodingWithMitch blog</h1>
+      <p class="fs-5 text-muted">In this course you will learn how to create simle blog with user registration and blog CRUD functionality. Django is really powerfull tool to deal with it!</p>
+    </div>
 
+<div class="container">
+	<div class="d-flex flex-column">
+		<h4> Registerted users</h4>
+		{% for account in accounts %}
+		<p>{{account}}</p>
+		{% endfor %}
+			
+	</div>
+
+</div>
 
 {% endblock content %}
 
